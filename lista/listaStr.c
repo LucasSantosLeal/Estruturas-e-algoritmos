@@ -34,8 +34,7 @@ void lst_imprime(Lista* l)
         }
 }
 
-
-int lst_cumprimento(Lista* l)
+int lst_comprimento(Lista* l)
 {
     int counter = 0;
     Lista* p;
@@ -47,16 +46,27 @@ int lst_cumprimento(Lista* l)
     printf("elementos na lista: %d", counter);
 }
 
-
-
 int main(void)
 {
-    Lista* l = lst_cria();
-    lst_insere(&l, 23);
-    lst_insere(&l, 22);
-    lst_insere(&l, 5);
-    lst_insere(&l, 15);
-    lst_cumprimento(l);
+
+    Lista* l;
+	int val;
+	int flag = 1;
+	l = lst_cria();
+	//INSERE
+	while(flag != 0)
+	{
+		printf("Digite val\n");
+		scanf("%d", &val);
+		//INSERE
+		lst_insere(&l,&val);
+
+
+		printf("Digite flag\n");
+		scanf("%d", &flag);
+	}
+
+    lst_comprimento(l);
 
     return 0;
 }
